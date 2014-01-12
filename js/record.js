@@ -24,13 +24,13 @@ $(function () {
             data[category][course]["grade"] = parseInt(cells[7].innerText);
         }
     }
-    $("tr:first").after("<tr><td>取得単位:" + credit
-                        + "<br /><br />成績（科目数）<br />A:" + record["A"]
-                        + "  B:" + record["B"]
-                        + "  C:" + record["C"]
-                        + "  D:" + record["D"]
-                        + "  P:" + record["P"]
-                        + "  F:" + record["F"]
-                        + "  G:" + record["G"]
-                        +"</td></tr>");
+    $("tr:first").after("<tr><td><table><tbody><tr><td colspan='5'>取得単位</td><td colspan='2'>" + credit
+                        + "</td></tr><tr><td colspan='7'>成績（科目数）</td></tr><tr><td>A</td><td>B</td><td>C</td><td>D</td><td>P</td><td>F</td><td>G</td></tr><tr><td>"
+                        + record["A"] + "</td><td>"
+                        + record["B"] + "</td><td>"
+                        + record["C"] + "</td><td>"
+                        + record["D"] + "</td><td>"
+                        + record["P"] + "</td><td>"
+                        + record["F"] + "</td><td>"
+                        + record["G"] +"</td></tr></tbody></table></td></tr>");
 });
