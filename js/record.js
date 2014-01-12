@@ -1,15 +1,8 @@
 $(function () {
     var rows = document.getElementsByClassName("User")[1].childNodes[1].childNodes;
-    var data = {}, category, credit = 0, re = /－？★/,
-        record = {
-            A: 0,
-            B: 0,
-            C: 0,
-            D: 0,
-            P: 0,
-            F: 0,
-            G: 0
-        }
+    var data = {}, //各科目のデータ（使っていない）
+        category, credit = 0, re = /－？★/,
+        record = {A: 0, B: 0, C: 0, D: 0, P: 0, F: 0, G: 0};
     for (var i = 1, l = rows.length; i < l; i++) {
         var cells = rows[i].childNodes;
         if (cells.length == 2) {
@@ -31,5 +24,13 @@ $(function () {
             data[category][course]["grade"] = parseInt(cells[7].innerText);
         }
     }
-    $("tr:first").after("<tr><td>取得単位:" + credit + "<br /><br />成績（科目数）<br />A:" + record["A"] + "  B:" + record["B"] + "  C:" + record["C"] + "  D:" + record["D"] + "  P:" + record["P"] + "  F:" + record["F"] + "  G:" + record["G"]+"</td></tr>");
+    $("tr:first").after("<tr><td>取得単位:" + credit
+                        + "<br /><br />成績（科目数）<br />A:" + record["A"]
+                        + "  B:" + record["B"]
+                        + "  C:" + record["C"]
+                        + "  D:" + record["D"]
+                        + "  P:" + record["P"]
+                        + "  F:" + record["F"]
+                        + "  G:" + record["G"]
+                        +"</td></tr>");
 });
